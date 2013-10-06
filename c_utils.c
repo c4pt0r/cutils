@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 void _c_assert(const char* cond, const char* file, int line, int panic) {
-    printf("assert '%s' failed @ (%s, %d)\n", cond, file, line);
+    log_error("assert '%s' failed @ (%s, %d)\n", cond, file, line);
     if (panic) {
         abort();
     }
@@ -16,7 +16,7 @@ void* _c_alloc(size_t size, const char* name, int line) {
 
     p = malloc(size);
     if (!p) {
-        /* TODO(dongxu) add logger output */
+        log_error("alloc error @ %s:%d", name, line);
     }
     return p;
 }
@@ -39,7 +39,7 @@ void* _c_realloc(void* ptr, size_t size, const char* name, int line) {
 
     p = realloc(ptr, size);
     if (p == NULL) {
-        /* TODO(dongxu): add logger */
+        log_error("realloc error @ %s:%d", name, line);
     }
     return p;
 }
