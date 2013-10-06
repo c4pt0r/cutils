@@ -10,8 +10,22 @@ some helper functions in C
 
 ###c_logger
 
-###c_(x)alloc
+一个简单的无依赖的logger, 可以选择输出到文件或者标准错误输出, 支持log级别, 同时支持动态调整级别.
+
+###c_alloc
+
+带log的内存分配器, 对于错误情况有一些log
 
 ###c_string
 
+一个轻量的c的字符串封装
+
+TODO string interning
+
 ###c_array
+
+轻量的变长数组封装(类似c++的vector)
+
+###queue.h
+
+steal it from BerkerlyDB
