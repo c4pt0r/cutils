@@ -1,4 +1,5 @@
 #include "c_utils.h"
+#include "c_logger.h"
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
